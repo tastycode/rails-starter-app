@@ -5,15 +5,16 @@ This is a starter web application based on the following technology stack:
 
 * Ruby 2.0
 * Rails 4.0.0
-* PostgreSQL
+* PostgreSQL / Local SQLite
+* AngularJS
+* Resque-Scheduler
 * RSpec
-* Twitter Bootstrap
-* OmniAuth with strategies for Twitter & GitHub
+* Twitter Bootstrap (w/ Flatstrap + SASS)
+* OmniAuth with strategies for Twitter & Facebook
 
-Starter App is deployable on Heroku. Here is a live demo: http://frozen-savannah-6000.herokuapp.com
-
-This is basically a combination of https://github.com/diowa/ruby2-rails4-bootstrap-heroku and https://github.com/codecase/omniauth-rails
+I'll try to keep this updated with whatever is hot in the community, but
+then I might not be using Rails.
 
 ```Gemfile``` also contains a set of useful gems for performance, security, api building...
 
-Pull requests for cleanups, fixes and improvements are welcome.
+Lots of low-hanging fruit in making this better, PR at will. Will probably accept.
