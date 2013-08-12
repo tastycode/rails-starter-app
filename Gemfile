@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+#ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 # Servers
@@ -9,7 +9,7 @@ gem 'unicorn'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 # Multi-environment configuration
 # gem 'simpleconfig'
@@ -17,8 +17,9 @@ gem 'omniauth-github'
 # API
 # gem 'rabl'
 
+gem 'pg' # for when deployed to heroku
 # ORM
-gem 'pg'
+gem 'sqlite3' # for local development
 
 # Performance and Exception management
 # gem 'airbrake'
@@ -29,36 +30,39 @@ gem 'pg'
 
 # Miscellanea
 # gem 'google-analytics-rails'
-# gem 'haml'
+ gem 'haml'
 # gem 'http_accept_language'
 gem 'jquery-rails'
 gem 'nokogiri'
-# gem 'resque', require: 'resque/server' # Resque web interface
+gem 'resque', require: 'resque/server' # Resque web interface
 
 # Assets
 gem 'coffee-rails', '~> 4.0.0'
-# gem 'haml_assets'
+gem 'haml_assets'
 
 # gem 'handlebars_assets'
 gem 'i18n-js'
 gem 'jquery-turbolinks'
-gem 'less-rails'
 gem 'sass-rails', '~> 4.0.0'
+gem 'flatstrap-sass'
 gem 'therubyracer'
 gem 'turbolinks'
-gem 'twitter-bootstrap-rails', github: 'diowa/twitter-bootstrap-rails', branch: 'fontawesome-3.2.1'
 gem 'uglifier', '>= 1.3.0'
+gem 'angularjs-rails'
+gem 'angular-ui-bootstrap-rails'
+gem 'font-awesome-sass-rails'
+
+gem 'resque-scheduler'
+gem 'foreman'
 
 group :development, :test do
-  gem 'debugger'
   gem 'delorean'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'pry'
-  gem 'pry-rails'
 end
 
 group :development do
+  gem 'jazz_hands'
   gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'

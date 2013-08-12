@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/diowa/twitter-bootstrap-rails.git
-  revision: 05f7e9fa7f1c7d7101d2f177169e8d632b9b9e65
-  branch: fontawesome-3.2.1
-  specs:
-    twitter-bootstrap-rails (2.2.7)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,8 +26,11 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.4)
+    angular-ui-bootstrap-rails (0.4.0.0)
+    angularjs-rails (1.0.7)
     arel (4.0.0)
     atomic (1.1.9)
+    awesome_print (1.1.0)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -67,7 +59,7 @@ GEM
     coffee-script-source (1.6.2)
     colorize (0.5.8)
     columnize (0.3.6)
-    commonjs (0.2.6)
+    coolline (0.4.2)
     coveralls (0.6.7)
       colorize
       multi_json (~> 1.3)
@@ -78,15 +70,17 @@ GEM
       safe_yaml (~> 0.9.0)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
-    debugger (1.6.0)
+    debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.1)
+      debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.2)
+    debugger-ruby_core_source (1.2.3)
     delorean (2.1.0)
       chronic
     diff-lcs (1.2.4)
+    diffy (3.0.1)
+    dotenv (0.8.0)
     email_spec (1.4.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -100,15 +94,49 @@ GEM
       railties (>= 3.0.0)
     faker (1.1.2)
       i18n (~> 0.5)
-    faraday (0.8.7)
-      multipart-post (~> 1.1)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     ffi (1.9.0)
+    flatstrap-sass (2.3.1.0)
+      font-awesome-rails (~> 3.0.2.0)
+      sass (~> 3.2)
+    font-awesome-rails (3.0.2.0)
+      railties (>= 3.1)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    grit (2.5.0)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
+      posix-spawn (~> 0.3.6)
+    haml (4.0.3)
+      tilt
+    haml_assets (0.2.2)
+      haml
+      tilt
     hashie (2.0.5)
     hike (1.2.3)
+    hirb (0.7.1)
     httpauth (0.2.0)
     i18n (0.6.4)
     i18n-js (2.1.2)
       i18n
+    jazz_hands (0.5.1)
+      awesome_print (~> 1.1.0)
+      coderay (~> 1.0.9)
+      coolline (>= 0.4.2)
+      hirb (~> 0.7.1)
+      pry (~> 0.9.12)
+      pry-debugger (~> 0.2.2)
+      pry-doc (~> 0.4.6)
+      pry-git (~> 0.2.3)
+      pry-rails (~> 0.3.1)
+      pry-remote (>= 0.1.7)
+      pry-stack_explorer (~> 0.4.9)
+      railties (>= 3.0, < 5.0)
     jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -120,11 +148,6 @@ GEM
     kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
-    less (2.3.2)
-      commonjs (~> 0.2.6)
-    less-rails (2.3.3)
-      actionpack (>= 3.1)
-      less (~> 2.3.1)
     libv8 (3.11.8.17)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -133,10 +156,11 @@ GEM
       callsite
       rack-contrib
       railties
-    method_source (0.8.1)
+    method_source (0.8.2)
     mime-types (1.23)
     mini_portile (0.5.0)
     minitest (4.7.5)
+    mono_logger (1.1.0)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     nokogiri (1.6.0)
@@ -151,9 +175,8 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-    omniauth-github (1.1.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -165,17 +188,36 @@ GEM
       omniauth-oauth (~> 1.0)
     pg (0.15.1)
     polyglot (0.3.3)
+    posix-spawn (0.3.6)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-rails (0.3.1)
+    pry-debugger (0.2.2)
+      debugger (~> 1.3)
+      pry (~> 0.9.10)
+    pry-doc (0.4.6)
+      pry (>= 0.9)
+      yard (>= 0.8)
+    pry-git (0.2.3)
+      diffy
+      grit
+      pry (>= 0.9.8)
+    pry-rails (0.3.2)
       pry (>= 0.9.10)
+    pry-remote (0.1.7)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    pry-stack_explorer (0.4.9.1)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     puma (2.1.1)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
+    rack-protection (1.5.0)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -198,7 +240,20 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.11.0)
     rake (10.1.0)
+    redis (3.0.4)
+    redis-namespace (1.3.1)
+      redis (~> 3.0.0)
     ref (1.0.5)
+    resque (1.24.1)
+      mono_logger (~> 1.0)
+      multi_json (~> 1.0)
+      redis-namespace (~> 1.2)
+      sinatra (>= 0.9.2)
+      vegas (~> 0.1.2)
+    resque-scheduler (2.0.1)
+      redis (>= 2.0.1)
+      resque (>= 1.20.0)
+      rufus-scheduler
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.13.0)
@@ -217,6 +272,8 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     rubyzip (0.9.9)
+    rufus-scheduler (2.0.23)
+      tzinfo (>= 0.3.23)
     safe_yaml (0.9.3)
     sass (3.2.9)
     sass-rails (4.0.0)
@@ -232,7 +289,11 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
-    slop (3.4.5)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slop (3.4.6)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -242,6 +303,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sqlite3 (1.3.7)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -263,17 +325,22 @@ GEM
       rack
       raindrops (~> 0.7)
     uniform_notifier (1.2.0)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
     webmock (1.11.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yard (0.8.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-ui-bootstrap-rails
+  angularjs-rails
   better_errors
   binding_of_caller
   bullet
@@ -281,35 +348,39 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   database_cleaner
-  debugger
   delorean
   email_spec
   factory_girl_rails
   faker
+  flatstrap-sass
+  font-awesome-sass-rails
+  foreman
+  haml
+  haml_assets
   i18n-js
+  jazz_hands
   jquery-rails
   jquery-turbolinks
   launchy
-  less-rails
   meta_request
   nokogiri
   omniauth
-  omniauth-github
+  omniauth-facebook
   omniauth-twitter
   pg
-  pry
-  pry-rails
   puma
   rails (= 4.0.0)
   rails_12factor
+  resque
+  resque-scheduler
   rspec
   rspec-rails
   sass-rails (~> 4.0.0)
   selenium-webdriver
   simplecov
+  sqlite3
   therubyracer
   turbolinks
-  twitter-bootstrap-rails!
   uglifier (>= 1.3.0)
   unicorn
   webmock
